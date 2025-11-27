@@ -10,7 +10,7 @@ SoundFile whistle;
 void setup() {
   size(400, 400);
   //load the sound effect from the data folder
-  whistle = new SoundFile(this, "trainwhistle.wav");
+  whistle = new SoundFile(this, "train-whistle.wav");
   train = new Train(random(100, 300), random(0.5, 2));
 }
 
@@ -22,7 +22,7 @@ void draw() {
 
 void keyPressed(){
  //press space to toot the horn! But don't allow it to keep starting
-  if (key==' '){
+  if (key==' '&& !whistle.isPlaying()){
     whistle.play();
   }
 }
